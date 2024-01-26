@@ -2,27 +2,12 @@
   text-align: center;
 }
 
-header {
-  height: 100px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-left: 50px;
-  padding-right: 50px;
-  margin-bottom: 30px;
-}
+
 
 .logo{
   width: 10%;
   height: auto;
   padding-right: 20px;
-}
-
-.eth{
-  width: 20px;
-  height: 20px;
-  padding-right: 10px;
-
 }
 
 .leftH, .rightH
@@ -278,77 +263,74 @@ header {
   padding: 5px;
 }
 
-
-.sec {
-  padding: 10px 5%;
-}
-
-.products {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(180px, 1fr)); /* Each row has up to 5 product cards */
-  gap: 0px;
-}
-
-.products .card {
-  width: 200px;
-  background: white;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
-  padding: 5px;
-  margin-bottom: 10px;
-  margin-top: 50px;
-  margin-left: 50px;
-}
-
-.products .card:hover {
-  background-color: #ccc; /* Change this to the desired darker grey color */
-}
-
-.products .card img {
-  height: 120px; /* Adjusted image height */
-  width: 120px; /* Adjusted image width */
-  border-radius: 50%; /* Made the image circular */
-  margin-bottom: 15px; /* Added margin for better spacing */
-  margin-top: 20px; /* Adjusted margin to lower the image */
-  object-fit: cover; /* Preserve aspect ratio while covering the area */
-}
-
-
-.products .card .desc {
-  padding: 5px 20px;
-  opacity: 0.8;
-}
-
-.products .card .title {
-  font-weight: 900;
-  font-size: 20px;
-  color: black;
-  padding: 0 20px;
-}
-
-.products .card .box {
+/* Add these styles to make the navigation bar responsive */
+.navbar {
+  height: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-bottom: 30px;
 }
 
-.products .card .box .btn-store {
-  font-size: 15px;
-  color: #5981F3;
-  background-color: #243056;
-  padding: 10px 18px;
-  font-weight: 900;
-  border: 1px solid transparent;
-  border-radius: 100px;
-}
-
-.products .card .box .btn-store:hover {
+.toggle-button {
+  display: none;
+  font-size: 30px;
   cursor: pointer;
-  color: #3b4874;
+  background: none;
+  border: none;
+  color: white;
 }
 
-.price,
-.desc {
-  color: black;
+.nav-links {
+  display: flex;
+  gap: 20px;
 }
+
+.nav-links.active {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100px;
+  right: 50px;
+  background-color: #0E111B;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Add a media query for small screens */
+@media (max-width: 768px) {
+  .toggle-button {
+    display: block;
+    font-size: 30px; /* Adjust the font size as needed */
+    padding: 8px 12px; /* Add padding to the button */
+  }
+
+  .leftH {
+    position: relative; /* Make sure the parent is relatively positioned */
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Adjust the top position as needed */
+    right: 80%; /* Adjust the right position as needed */
+    transform: translateX(80%); /* Center the menu horizontally */
+    background-color: #0E111B;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .logo {
+    display: none; /* Hide logo on smaller screens */
+  }
+}
+

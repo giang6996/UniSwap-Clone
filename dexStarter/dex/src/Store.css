@@ -1,0 +1,73 @@
+.sec {
+    padding: 10px 5%;
+  }
+  
+  .products {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(180px, 1fr)); /* Each row has up to 5 product cards */
+    gap: 0px;
+  }
+  
+  .products .card {
+    width: 200px;
+    background: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-top: 100px;
+    margin-left: 50px;
+  }
+  
+  .products .card:hover {
+    background-color: #ccc; /* Change this to the desired darker grey color */
+  }
+  
+  .products .card img {
+    height: 120px; /* Adjusted image height */
+    width: 120px; /* Adjusted image width */
+    border-radius: 50%; /* Made the image circular */
+    margin-bottom: 15px; /* Added margin for better spacing */
+    margin-top: 20px; /* Adjusted margin to lower the image */
+    object-fit: cover; /* Preserve aspect ratio while covering the area */
+  }
+  
+  
+  .products .card .desc {
+    padding: 5px 20px;
+    opacity: 0.8;
+  }
+  
+  .products .card .title {
+    font-weight: 900;
+    font-size: 20px;
+    color: black;
+    padding: 0 20px;
+  }
+  
+  .products .card .box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .products .card .box .btn-store {
+    font-size: 15px;
+    color: #5981F3;
+    background-color: #243056;
+    padding: 10px 18px;
+    font-weight: 900;
+    border: 1px solid transparent;
+    border-radius: 100px;
+  }
+  
+  .products .card .box .btn-store:hover {
+    cursor: pointer;
+    color: #3b4874;
+  }
+  
+  .price,
+  .desc {
+    color: black;
+  }
