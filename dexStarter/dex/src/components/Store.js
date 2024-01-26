@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import ball1 from '../ball1.png';
 import shoeImage from '../shoe.png';
 import shirtImage from '../shirt.png';
+import '../Store.css'; 
+
 
 function ProductCard({ id, image, description, title, price }) {
   return (
