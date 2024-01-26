@@ -21,8 +21,9 @@ function Header() {
         <Link to="/store" className="link">
           <div className="headerItem">Store </div>
         </Link>
+        
       </div>
-      
+
       <div className="rightH">
         {isStorePage && (
             <div className="search-bar">
