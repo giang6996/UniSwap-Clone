@@ -1,0 +1,40 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.leftdiv {
+    width: 35%;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ava-img {
+    margin-top: -20px;
+    width: 150px;
+    height: 150px;
+}
+
+.name{
+    color: Black;
+    margin-top: -20px;
+    font-size: 20px;
+}
+
+.edit-btn{
+   background-color: black;
+   margin-top: 280px;
+}
+
+
+
+.rightdiv {
+    background-color: white;
+    width: 63%;
+    margin-left: -50px; /* Add margin-left to move rightdiv to the right */
+    border-radius: 15px;
+
+}

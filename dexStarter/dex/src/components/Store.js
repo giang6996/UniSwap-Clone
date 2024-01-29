@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import ball1 from '../ball1.png';
 import shoeImage from '../shoe.png';
 import shirtImage from '../shirt.png';
-import '../Store.css'; 
+import './styles/Store.css';
 
 
 function ProductCard({ id, image, description, title, price }) {
@@ -60,7 +60,7 @@ function Store() {
   ];
 
   return (
-    <div className="store1">
+    <div className="container">
       <section className="item-display-sec">
         <div className="products">
           {products.map((product) => (
