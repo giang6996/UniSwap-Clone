@@ -10,6 +10,7 @@ function Header() {
   const [showDropdown, setShowDropdown] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 768);
 
+
   // Function to handle screen size changes
   const handleResize = () => {
     setIsSmallScreen(window.innerWidth <= 768);
@@ -54,7 +55,11 @@ function Header() {
           <Link to="/profile" className="link" onClick={hideDropdown}>
             <div className="headerItem">Profile </div>
           </Link>
+          <Link to="/carousel" className="link" onClick={hideDropdown}>
+            <div className="headerItem">Test </div>
+          </Link>
         </div>
+
       </div>
 
       <div className="rightH">
