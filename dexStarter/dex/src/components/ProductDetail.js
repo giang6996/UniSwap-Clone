@@ -22,14 +22,14 @@ function ProductDetail() {
         },
         {
             id: '2',
-            image: shoeImage,
+            image: ball1,
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus in porttitor libero. Sed nulla eros, venenatis nec diam sed, venenatis fringilla lorem. Etiam tincidunt sapien sed metus ultrices, in molestie justo blandit. Orci varius natoque penatibus et magnis dis parturient.',
             title: 'Nike Air Zoom',
             price: 8,
         },
         {
             id: '3',
-            image: shirtImage,
+            image: ball1,
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus in porttitor libero. Sed nulla eros, venenatis nec diam sed, venenatis fringilla lorem. Etiam tincidunt sapien sed metus ultrices, in molestie justo blandit. Orci varius natoque penatibus et magnis dis parturient.',
             title: 'Cotton Comfort',
             price: 12,

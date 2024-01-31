@@ -58,6 +58,9 @@ function Header() {
           <Link to="/profile" className="link" onClick={hideDropdown}>
             <div className="headerItem">Profile </div>
           </Link>
+          <Link to="/carousel" className="link" onClick={hideDropdown}>
+            <div className="headerItem">Test </div>
+          </Link>
         </div>
 
       </div>
