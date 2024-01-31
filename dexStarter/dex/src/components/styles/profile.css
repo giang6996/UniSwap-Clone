@@ -33,6 +33,7 @@
 
 .rightdiv {
     background-color: white;
+    color: black;
     width: 63%;
     margin-left: -50px; /* Add margin-left to move rightdiv to the right */
     border-radius: 15px;
