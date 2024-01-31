@@ -48,9 +48,6 @@ function Header() {
           <Link to="/" className="link" onClick={hideDropdown}>
             <div className="headerItem">Home</div>
           </Link>
-          <Link to="/tokens" className="link" onClick={hideDropdown}>
-            <div className="headerItem">Token</div>
-          </Link>
           <Link to="/store" className="link" onClick={hideDropdown}>
             <div className="headerItem">Store </div>
           </Link>
