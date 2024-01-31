@@ -10,19 +10,20 @@ function Footer() {
   return (
         <>
       <div className="footer container-fluid">
-        <div className='d-flex justify-content-around'>
+        <div className='d-flex justify-content-around align-items-center'>
           <div className='w-25 d-flex justify-content-around'>
             <a className='link' href=""><SocialIcon url="www.facebook.com" /></a>
             <a className='link' href=""><SocialIcon url="www.instagram.com" /></a>
             <a className='link' href=""><SocialIcon url="www.google.com" /></a>
           </div>
-          <div className='w-25 d-flex justify-content-around'>
+          <div className='w-25 d-flex justify-content-around align-items-center'>
+            <p className="my-0" id="text">By JebDev @2024</p>
+          </div>
+          <div className='w-25 d-flex justify-content-evenly align-items-center'>
             <a className='link' href="#">Home</a>
             <a className='link' href="#">About us</a>
           </div>
-        </div>
-        <div >
-          <p id="text">By JebDev @2024</p>
+
         </div>
       </div>
         </>
