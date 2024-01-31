@@ -1,21 +1,31 @@
 import React from 'react'
+import { SocialIcon } from 'react-social-icons/component'
+import 'react-social-icons/instagram'
+import 'react-social-icons/facebook'
+import 'react-social-icons/google'
+import "./styles/Footer.css"
+import "../App.css"
 
 function Footer() {
   return (
-    <footer>
-        <div id="contact">
-            <a class="bottom-icon" href=""><img src="images/instagram.png" alt="instagram"/></a>
-            <a class="bottom-icon" href=""><img src="images/facebook.webp" alt="facebook"/></a>
-            <a class="bottom-icon" href=""><img src="images/google.png" alt="google"/></a>
-            <p>
-                <a href="home-page.html">Home</a>
-                <a href="">About us</a>
-            </p>
+        <>
+      <div className="footer container-fluid">
+        <div className='d-flex justify-content-around'>
+          <div className='w-25 d-flex justify-content-around'>
+            <a className='link' href=""><SocialIcon url="www.facebook.com" /></a>
+            <a className='link' href=""><SocialIcon url="www.instagram.com" /></a>
+            <a className='link' href=""><SocialIcon url="www.google.com" /></a>
+          </div>
+          <div className='w-25 d-flex justify-content-around'>
+            <a className='link' href="#">Home</a>
+            <a className='link' href="#">About us</a>
+          </div>
         </div>
-        <div id="bottom">
-            <p id="text">By JebDev @2024</p>
+        <div >
+          <p id="text">By JebDev @2024</p>
         </div>
-    </footer>
+      </div>
+        </>
   );
 }
 
