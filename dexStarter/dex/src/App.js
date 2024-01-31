@@ -6,7 +6,7 @@ import CarouselHead from "./components/CarouselHead.js"
 
 import ProductDetail from "./components/ProductDetail.js";
 import Profile from "./components/Profile.js"
-
+import Footer from "./components/Footer.js";
 import {Routes, Route} from "react-router-dom"
 
 function App() {
@@ -22,6 +22,8 @@ function App() {
       <Route path="/profile" element={<Profile />} />
       <Route path="/carousel" element={<CarouselHead />} />
     </Routes>
+
+    <Footer />
   </div>
   );
 }
