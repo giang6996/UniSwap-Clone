@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import ball1 from '../ball1.png';
-import shoeImage from '../shoe.png';
-import shirtImage from '../shirt.png';
+
 import './styles/Store.css';
 
 
