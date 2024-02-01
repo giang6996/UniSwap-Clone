@@ -141,9 +141,14 @@ function Store() {
         <div className='products-header'>
           <h2>Top featured</h2>
         </div>
-        <div className='d-flex flex-row justify-content-center'>
-          <div className='bg-white rounded w-25'>
-
+        <div className='d-flex flex-lg-row flex-sm-column justify-content-center'>
+          <div className='bg-white w-25 rounded py-4 px-2'>
+            <div class="input-group">
+              <input type="text" class="form-control rounded" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2" />
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="button">Button</button>
+                </div>
+            </div>
           </div>
           <div className="products w-75 d-flex flex-row flex-wrap justify-content-center">
             {products.map((product) => (
