@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import ball1 from '../ball1.png';
+
 import cover1 from'../cover-store-1.jpg';
 import Carousel from 'react-bootstrap/Carousel';
 import './styles/Store.css';
