@@ -55,9 +55,6 @@ function Header() {
           <Link to="/profile" className="link" onClick={hideDropdown}>
             <div className="headerItem">Profile </div>
           </Link>
-          <Link to="/carousel" className="link" onClick={hideDropdown}>
-            <div className="headerItem">Test </div>
-          </Link>
         </div>
 
       </div>
@@ -68,7 +65,11 @@ function Header() {
             <input type="text" id="search-bar-input" placeholder="Search..." />
           </div>
         )}
+        <Link to="/cart" className="link" onClick={hideDropdown}>
+            <div className="headerItem">Cart </div>
+          </Link>
         <div className="connectButton">Connect</div>
+        
       </div>
     </nav>
   );
