@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import ball1 from '../ball1.png';
 
 import cover1 from'../cover-store-1.jpg';
+import cover2 from '../cover-store-2.jpg';
+import cover3 from '../cover-store-3.jpg';
 import Carousel from 'react-bootstrap/Carousel';
 import './styles/Store.css';
 import "./styles/Carousel.css"
@@ -31,7 +33,7 @@ function StoreCarousel() {
       <Carousel.Item>
         <div className='carouselItem'>
           <div className="card bg-dark">
-            <img className='img-fluid card-img opacity-25' src={cover1} alt="cover1" />
+            <img className='img-fluid card-img opacity-25' src={cover2} alt="cover1" />
             <div class="card-img-overlay d-flex flex-column justify-content-center text-white">
               <h1 class="card-title">Card title</h1>
               <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -42,7 +44,7 @@ function StoreCarousel() {
       <Carousel.Item>
         <div className='carouselItem'>
           <div className="card bg-dark">
-            <img className='img-fluid card-img opacity-25' src={cover1} alt="cover1" />
+            <img className='img-fluid card-img opacity-25' src={cover3} alt="cover1" />
             <div class="card-img-overlay d-flex flex-column justify-content-center text-white">
               <h1 class="card-title">Card title</h1>
               <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -56,8 +58,8 @@ function StoreCarousel() {
 
 function ProductCard({ id, image, description, title, author, price }) {
   return (
-      <Link to={`/product/${id}`} className="product-link">
-        <div className="card">
+    <Link to={`/product/${id}`} className="product-link px-4 col-lg-4 col-md-6 col-sm-12">
+      <div className="card w-100 ">
         <div className="img img-fluid">
             <img src={image} className="product-img" alt={title} />
           </div>
@@ -141,16 +143,54 @@ function Store() {
         <div className='products-header'>
           <h2>Top featured</h2>
         </div>
-        <div className='d-flex flex-lg-row flex-sm-column justify-content-center'>
-          <div className='bg-white w-25 rounded py-4 px-2'>
-            <div class="input-group">
-              <input type="text" class="form-control rounded" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2" />
-                <div class="input-group-append">
-                  <button class="btn btn-outline-secondary" type="button">Button</button>
-                </div>
+        <div className='d-flex flex-lg-row flex-md-column flex-sm-column justify-content-between'>
+          <div className='bg-white rounded col-lg-4 py-4 px-2'>
+            <div className="py-4 px-2">
+              <h2 className='text-dark'>Result Filter</h2>
             </div>
+            <form action="#">
+              <div className='py-4 px-2'>
+                <h5 className='text-dark text-start'>Search</h5>
+                <div class="input-group">
+                  <input type="text" class="form-control rounded" placeholder="Search here" />
+                </div>
+              </div>
+              <div className="py-4 px-2">
+                <h5 className='text-dark text-start'>Category</h5>
+                <select class="form-select">
+                  <option selected disabled>--Select categories here--</option>
+                  <option value="1">Category One</option>
+                  <option value="2">Category Two</option>
+                  <option value="3">Category Three</option>
+                </select>
+              </div>
+              <div className="py-4 px-2">
+                <h5 className='text-dark text-start'>Collection</h5>
+                <select class="form-select">
+                  <option selected disabled>--Select collections here--</option>
+                  <option value="1">Collection One</option>
+                  <option value="2">Collection Two</option>
+                  <option value="3">Collection Three</option>
+                </select>
+              </div>
+              <div className="py-4 px-2">
+                <h5 className='text-dark text-start'>Order</h5>
+                <select class="form-select">
+                  <option value="1" selected>Ascending</option>
+                  <option value="2">Descending</option>
+                </select>
+              </div>
+              <div className="py-4 px-2">
+                <h5 className='text-dark text-start'>Price range</h5>
+                <label for="customRange2" class="form-label">Example range</label>
+                <input type="range" class="form-range" min="0" max="5" id="customRange2" />
+              </div>
+              <div className="py-4 px-2">
+                <button className='btn btn-primary' type="submit">Filter Results</button>
+              </div>
+            </form>
           </div>
-          <div className="products w-75 d-flex flex-row flex-wrap justify-content-center">
+          <div className="products d-flex flex-row col-lg-8 flex-wrap justify-content-center">
             {products.map((product) => (
               <ProductCard key={product.id} {...product} />
             ))}
