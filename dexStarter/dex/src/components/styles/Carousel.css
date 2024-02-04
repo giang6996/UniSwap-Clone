@@ -1,3 +1,66 @@
-.carouselItem{
-    padding: 10px 0 100px 0;
+.carousel-img {
+    max-height: 500px;
+    object-fit: cover;
+  }
+  
+  .mid {
+    display: flex;
+    align-items: top;
+    justify-content: space-around;
+    margin-top: 80px;
+}
+
+.mid > div {
+    text-align: center;
+    max-width: 240px; /* Set a maximum width for each column */
+}
+
+.img-container {
+    border: 5px solid #000000;
+    display: inline-block;
+    border-radius: 50px;
+    margin-bottom: 20px; /* Add margin to create space between image and heading */
+}
+
+
+
+.h2 {
+  font-weight: 100;
+  margin-bottom: 100px;
+}
+
+.buy-nft {
+    text-align: center;
+    width: 290px;
+    height: max-content;
+    word-break: keep-all;
+}
+
+@media only screen and (max-width: 1280px) {
+
+    .buy-nft{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 1050px) {
+    .mid{
+        display: inline;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .buy-nft{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+
+
+    .buy-nft{
+        width: 100%;
+    }
 }

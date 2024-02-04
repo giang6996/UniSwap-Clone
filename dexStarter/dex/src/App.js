@@ -1,9 +1,9 @@
 import "./App.css";
 import Header from "./components/Header.js";
-import Swap from "./components/Swap.js";
+import Home from "UniSwap-Clone/dexStarter/dex/src/components/Home.js";
 import Store from "./components/Store.js";
 import CarouselHead from "./components/CarouselHead.js"
-
+import Cart from "./components/Cart.js";
 import ProductDetail from "./components/ProductDetail.js";
 import Profile from "./components/Profile.js"
 import Footer from "./components/Footer.js";
@@ -13,16 +13,15 @@ function App() {
   return (
   <div className="App">
     <Header />
-
-
-
     {/* define route for each function using router-dom */}
     <Routes>
-      <Route path = "/" element = {<Swap/>} />
+      <Route path = "/" element = {<Home/>} />
       <Route path="/store" element={<Store />} />
       <Route path="/product/:id" element={<ProductDetail />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/carousel" element={<CarouselHead />} />
+      <Route path="/cart" element={<Cart />} />
+
     </Routes>
 
     <Footer />
