@@ -190,7 +190,7 @@ function Store() {
               </div>
             </form>
           </div>
-          <div className="products d-flex flex-row col-lg-8 flex-wrap justify-content-center">
+          <div className="products d-flex flex-row col-lg-8 flex-wrap px-4 justify-content-center">
             {products.map((product) => (
               <ProductCard key={product.id} {...product} />
             ))}
