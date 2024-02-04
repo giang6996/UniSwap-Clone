@@ -1,6 +1,6 @@
 import "./App.css";
 import Header from "./components/Header.js";
-import Home from "UniSwap-Clone/dexStarter/dex/src/components/Home.js";
+import Home from "./components/Home.js";
 import Store from "./components/Store.js";
 import CarouselHead from "./components/CarouselHead.js"
 import Cart from "./components/Cart.js";

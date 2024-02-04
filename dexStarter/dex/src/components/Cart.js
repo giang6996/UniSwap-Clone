@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './styles/Cart.css';
 import ball1 from '../ball1.png';
 import Logo from '../Logo.png';
+import './styles/Cart.css';
 import { Link, useLocation } from 'react-router-dom';
 
 function Cart() {
@@ -29,12 +30,12 @@ function Cart() {
                 <p id="price">5 ETH</p>
                 <span id="delete" onclick="delete_item()"><i class="material-icons">&#xe872;</i></span>
             </div>
-            
-    
+
+
             <div class="product">
                 <img src={ball1} alt="messi ball"/>
                 <div id="product-name">
-                    <p>Ronaldo ball</p>    
+                    <p>Ronaldo ball</p>
                 </div>
                 <div id="quantity">
                     <span id="minus">-</span>
@@ -44,11 +45,11 @@ function Cart() {
                 <p id="price">5 ETH</p>
                 <span id="delete" onclick="delete_item()"><i class="material-icons">&#xe872;</i></span>
             </div>
-    
+
             <div class="product">
                 <img src={ball1} alt="messi ball"/>
                 <div id="product-name">
-                    <p>Neymar ball</p>    
+                    <p>Neymar ball</p>
                 </div>
                 <div id="quantity">
                     <span id="minus">-</span>
@@ -58,8 +59,8 @@ function Cart() {
                 <p id="price">5 ETH</p>
                 <span id="delete"><i class="material-icons">&#xe872;</i></span>
             </div>
-            
-    
+
+
             <div id="total-div">
                 <p>Subtotal</p>
                 <p id="total">15 ETH</p>
@@ -89,14 +90,10 @@ function Cart() {
                 <p><button>Buy Now</button></p>
             </div>
         </div>
-        
-        </div>      
+
+        </div>
     </div>
     );
 }
 
 export default Cart;
-
-
-
-import './styles/Cart.css';
