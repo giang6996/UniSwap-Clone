@@ -11,6 +11,7 @@ function ControlledExample() {
     return (
         <Carousel activeIndex={index} onSelect={handleSelect}>
             <Carousel.Item>
+                 
                 <div className='carouselItem'>
                     <h1>Hello World!</h1>
                 </div>

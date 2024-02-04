@@ -15,9 +15,11 @@
     "ethers": "^5.7.2",
     "react": "^18.2.0",
     "react-bootstrap": "^2.9.2",
+    "react-bootstrap-icons": "^1.10.3",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.6.2",
     "react-scripts": "5.0.1",
+    "react-social-icons": "^6.10.0",
     "wagmi": "^0.10.11",
     "web-vitals": "^2.1.4"
   },
