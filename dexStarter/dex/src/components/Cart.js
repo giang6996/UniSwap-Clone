@@ -5,15 +5,22 @@ import Logo from '../Logo.png';
 import './styles/Cart.css';
 import { Link, useLocation } from 'react-router-dom';
 
+// Cart page, displaying choosen product ready to purchase
+// For demonstration, the page will only include HTML, and no actual API calls or
+// database interaction have been implemented with a total price and the possibility of removing products or emptying the cart
+// In a real application you would need to connect this component with your backend server and database
+
 function Cart() {
     return(
+    // button to return to Store page
     <div>
-            <div id="back-arrow">
+        <div id="back-arrow">
         <i id="arrow-left"></i>
         <a href="Store.js">Go back to shopping</a>
     </div>
 
     <div id="cart">
+    {/* List of example item in Cart */}
         <p id="cart-title">Your cart</p>
 
         <div class="product-and-total">
@@ -66,7 +73,8 @@ function Cart() {
                 <p id="total">15 ETH</p>
             </div>
         </div>
-
+        
+        {/* Detail wallet infomation, so user can check balance before engage purchases */}
         <div id="detail">
             <p>Details</p>
             <div class="wallet">
