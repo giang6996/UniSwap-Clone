@@ -55,6 +55,7 @@ function Header() {
           <Link to="/profile" className="link" onClick={hideDropdown}>
             <div className="headerItem">Profile </div>
           </Link>
+        
         </div>
 
       </div>
@@ -68,8 +69,9 @@ function Header() {
         <Link to="/cart" className="link" onClick={hideDropdown}>
             <div className="headerItem">Cart </div>
           </Link>
-        <div className="connectButton">Connect</div>
-        
+        <Link to="/login" className="link" onClick={hideDropdown}>
+              <div className="loginButton">Login</div>
+          </Link>
       </div>
     </nav>
   );
