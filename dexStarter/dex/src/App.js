@@ -6,6 +6,7 @@ import CarouselHead from "./components/CarouselHead.js"
 import Cart from "./components/Cart.js";
 import ProductDetail from "./components/ProductDetail.js";
 import Profile from "./components/Profile.js"
+import LogRes from "./components/LogRes.js"
 import Footer from "./components/Footer.js";
 import {Routes, Route} from "react-router-dom"
 
@@ -19,6 +20,7 @@ function App() {
       <Route path="/store" element={<Store />} />
       <Route path="/product/:id" element={<ProductDetail />} />
       <Route path="/profile" element={<Profile />} />
+      <Route path="/login" element={<LogRes />} />
       <Route path="/carousel" element={<CarouselHead />} />
       <Route path="/cart" element={<Cart />} />
 

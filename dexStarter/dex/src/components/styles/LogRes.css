@@ -1,0 +1,99 @@
+.container-log {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 50px; /* Reduced margin-top */
+    background: white;
+    padding-bottom: 10px; /* Reduced padding-bottom */
+    color: black;
+    width: 350px; /* Reduced width */
+}
+
+.header-log {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px; /* Reduced gap */
+    width: 100%;
+    margin-top: 10px; /* Reduced margin-top */
+}
+
+.text {
+    color: #5981F3;
+    font-size: 28px; /* Reduced font-size */
+    font-weight: 700;
+}
+
+.underline {
+    width: 40px; /* Reduced width */
+    height: 3px; /* Reduced height */
+    background: #5981F3;
+    border-radius: 4px; /* Reduced border-radius */
+}
+
+.inputs {
+    margin-top: 20px; /* Reduced margin-top */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Reduced gap */
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 280px; /* Reduced width */
+    height: 50px; /* Reduced height */
+    background: #eaeaea;
+    border-radius: 5px;
+}
+
+.input img {
+    margin: 0px 10px; /* Reduced margin */
+}
+
+.input input {
+    height: 30px; /* Reduced height */
+    width: 200px; /* Reduced width */
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #797979;
+    font-size: 14px; /* Reduced font-size */
+}
+
+.forgot-password {
+    margin-top: 10px; /* Reduced margin-top */
+    color: #797979;
+    font-size: 14px; /* Reduced font-size */
+}
+
+.forgot-password span {
+    color: #5981F3;
+    cursor: pointer;
+}
+
+.submit-container {
+    display: flex;
+    gap: 10px; /* Reduced gap */
+    margin: 20px auto; /* Reduced margin */
+}
+
+.submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px; /* Reduced width */
+    height: 40px; /* Reduced height */
+    color: #fff;
+    background: #5981F3;
+    border-radius: 30px; /* Reduced border-radius */
+    font-size: 14px; /* Reduced font-size */
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.gray {
+    background: #eaeaea;
+    color: #676767;
+}
