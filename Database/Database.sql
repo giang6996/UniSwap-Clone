@@ -25,5 +25,7 @@ CREATE TABLE `transactions` (
   `status` ENUM('Pending','Confirmed','Denied') DEFAULT 'Pending',
   CONSTRAINT `fk_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_asset_id` FOREIGN KEY (`asset_id`) REFERENCES `assets` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  INDEX (`user_id`, `asset_id`)
+  INDEX `user_id_index` (`user_id`),
+  INDEX `asset_id_index` (`asset_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
