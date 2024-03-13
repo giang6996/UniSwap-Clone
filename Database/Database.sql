@@ -6,13 +6,15 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `assets` (
   `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
-  `name` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `author` varchar(255) DEFAULT NULL,
   `description` text DEFAULT NULL,
-  `current_price` decimal(15,2) NOT NULL,
+  `price` decimal(15,2) NOT NULL,
   `image_url` varchar(1024) DEFAULT NULL,
-  `category` varchar(255) NOT NULL DEFAULT 'NFT',
+  `category` varchar(255) DEFAULT NULL,
   `availability` boolean DEFAULT true
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 
 
 CREATE TABLE `users` (
