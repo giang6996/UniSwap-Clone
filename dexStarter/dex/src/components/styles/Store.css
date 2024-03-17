@@ -74,5 +74,7 @@
     text-decoration: none;
 }
 
-
+.price-container p{
+  color: black;
+}
 

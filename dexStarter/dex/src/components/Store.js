@@ -137,6 +137,7 @@ function Store() {
                 <h5 className='text-dark text-start'>Price range</h5>
                 <div className='price-container'>
                   <div className='min-value numberVal'>
+                  <p>Enter Minimum Price</p>
                   <input
                       type="number"
                       min="0"
@@ -148,6 +149,7 @@ function Store() {
                   </div>
                   <br />
                   <div className='max-value numerVal'>
+                  <p>Enter Maximum Price</p>
                   <input
                       type="number"
                       min={minPrice < 0 ? 0 : minPrice} // Ensure max value is not less than min value

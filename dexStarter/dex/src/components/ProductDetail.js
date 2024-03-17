@@ -14,13 +14,12 @@ function ProductDetail() {
     useEffect(() => {
         const fetchProduct = async () => {
             try {
-                const response = await axios.get(`/api/products/${id}`);
-                if (!response.data) {
-                    throw new Error('Product not found');
-                }
+                console.log('Fetching product with ID:', id); // Log the ID parameter
+                const response = await axios.get(`http://127.0.0.1:5000/api/products/${id}`);
+                console.log('Response:', response.data); // Log the response data
                 setSelectedProduct(response.data);
             } catch (error) {
-                console.error('Error fetching product:', error);
+                console.error('Error fetching product:', error); // Log any errors
             } finally {
                 setLoading(false);
             }
@@ -28,10 +27,6 @@ function ProductDetail() {
 
         fetchProduct();
     }, [id]);
-
-    useEffect(() => {
-        console.log(selectedProduct);
-    }, [selectedProduct]);
 
     if (loading) {
         return <div>Loading...</div>;
@@ -46,7 +41,7 @@ function ProductDetail() {
             <div className="left">
                 <img className="product-image" src={selectedProduct.image_url} alt={selectedProduct.title} />
             </div>
-            <div className="px-5 right">
+            <div className="right">
                 <h1 className="product-title">{selectedProduct.title}</h1>
                 <p className="product-description">{selectedProduct.description}</p>
                 <h4 className="product-price">{`${selectedProduct.price} ETH`}</h4>
