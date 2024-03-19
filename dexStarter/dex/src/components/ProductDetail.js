@@ -1,39 +1,36 @@
 import "./styles/ProductDetail.css";
-import { Cart } from 'react-bootstrap-icons';
 import React, { useState, useEffect } from 'react';
-import Button from 'react-bootstrap/Button';
+import axios from 'axios';
 import PropTypes from 'prop-types';
-import ball1 from '../ball1.png';
-import { Link, useParams } from 'react-router-dom'; // Import Link from react-router-dom
-
+import { Cart } from 'react-bootstrap-icons';
+import Button from 'react-bootstrap/Button';
+import { useParams } from 'react-router-dom';
 
 function ProductDetail() {
     const { id } = useParams();
+    const [selectedProduct, setSelectedProduct] = useState(null);
+    const [loading, setLoading] = useState(true);
 
-    // List of example product, represent what real-life product might look like
-    // Ideally, fetch product data from a data source or API
-    const products = [{
-            id: '1',
-            image: ball1,
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus in porttitor libero. Sed nulla eros, venenatis nec diam sed, venenatis fringilla lorem. Etiam tincidunt sapien sed metus ultrices, in molestie justo blandit. Orci varius natoque penatibus et magnis dis parturient.',
-            title: "Messi's ball",
-            price: 5,
-        },
-        {
-            id: '2',
-            image: ball1,
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus in porttitor libero. Sed nulla eros, venenatis nec diam sed, venenatis fringilla lorem. Etiam tincidunt sapien sed metus ultrices, in molestie justo blandit. Orci varius natoque penatibus et magnis dis parturient.',
-            title: 'Nike Air Zoom',
-            price: 8,
-        },
-        {
-            id: '3',
-            image: ball1,
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus in porttitor libero. Sed nulla eros, venenatis nec diam sed, venenatis fringilla lorem. Etiam tincidunt sapien sed metus ultrices, in molestie justo blandit. Orci varius natoque penatibus et magnis dis parturient.',
-            title: 'Cotton Comfort',
-            price: 12,
-        },];
-    const selectedProduct = products.find((product) => product.id === id);
+    useEffect(() => {
+        const fetchProduct = async () => {
+            try {
+                console.log('Fetching product with ID:', id); // Log the ID parameter
+                const response = await axios.get(`http://127.0.0.1:5000/api/products/${id}`);
+                console.log('Response:', response.data); // Log the response data
+                setSelectedProduct(response.data);
+            } catch (error) {
+                console.error('Error fetching product:', error); // Log any errors
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchProduct();
+    }, [id]);
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
 
     if (!selectedProduct) {
         return <div>Product not found</div>;
@@ -42,9 +39,9 @@ function ProductDetail() {
     return (
         <div className="product-detail">
             <div className="left">
-                <img className="product-image" src={selectedProduct.image} alt={selectedProduct.title} />
+                <img className="product-image" src={selectedProduct.image_url} alt={selectedProduct.title} />
             </div>
-            <div className="px-5 right">
+            <div className="right">
                 <h1 className="product-title">{selectedProduct.title}</h1>
                 <p className="product-description">{selectedProduct.description}</p>
                 <h4 className="product-price">{`${selectedProduct.price} ETH`}</h4>
@@ -53,7 +50,6 @@ function ProductDetail() {
                     <Button className="btn btn-lg btn-primary rounded-pill">Buy Now</Button>
                 </div>
             </div>
-            {/* Add additional details and Buttons as shown in the image */}
         </div>
     );
 }
