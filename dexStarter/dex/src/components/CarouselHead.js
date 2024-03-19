@@ -2,16 +2,17 @@ import Carousel from 'react-bootstrap/Carousel';
 import { useState } from 'react';
 import "./styles/Carousel.css"
 
+// Example component of a carousel, implement at the head of webpage such as Index, Store,...
 function ControlledExample() {
     const [index, setIndex] = useState(0);
 
+    // Set the index of the current slide to show in the carousel
     const handleSelect = (selectedIndex) => {
         setIndex(selectedIndex);
     };
     return (
         <Carousel activeIndex={index} onSelect={handleSelect}>
             <Carousel.Item>
-                 
                 <div className='carouselItem'>
                     <h1>Hello World!</h1>
                 </div>

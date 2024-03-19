@@ -10,6 +10,7 @@ import { Link, useParams } from 'react-router-dom'; // Import Link from react-ro
 function ProductDetail() {
     const { id } = useParams();
 
+    // List of example product, represent what real-life product might look like
     // Ideally, fetch product data from a data source or API
     const products = [{
             id: '1',
