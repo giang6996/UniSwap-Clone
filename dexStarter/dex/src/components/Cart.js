@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './styles/Cart.css';
-import ball1 from '../ball1.png';
-import Logo from '../Logo.png';
+import ball1 from '../img/ball1.png';
+import Logo from '../img/Logo.png';
 import './styles/Cart.css';
 import { Link, useLocation } from 'react-router-dom';
 

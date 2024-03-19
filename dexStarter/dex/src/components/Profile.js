@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import ava from '../ava.png';
+import ava from '../img/ava.png';
 import './styles/profile.css';
 
 
