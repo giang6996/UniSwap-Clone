@@ -7,7 +7,6 @@
     height: auto;
     margin: 20px 0;
     padding: 20px 0;
-
   }
 
   .products .card:hover {
@@ -19,8 +18,8 @@
   }
 
   .products .card img {
-    height: auto; /* Adjusted image height */
-    width: 50%; /* Adjusted image width */
+    height: 120px; /* Adjusted image height */
+    width: 120px; /* Adjusted image width */
   }
 
 
@@ -29,6 +28,7 @@
     overflow: hidden;
     padding: 5px 20px;
     opacity: 0.8;
+    
   }
 
   .products .card .title {
@@ -67,3 +67,14 @@
   .price, .desc {
     color: black;
   }
+  
+  .products .card .title,
+.products .card .author,
+.products .card .price {
+    text-decoration: none;
+}
+
+.price-container p{
+  color: black;
+}
+

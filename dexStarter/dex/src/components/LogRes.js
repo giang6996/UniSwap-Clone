@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import './styles/LogRes.css';
-import email_icon from '../email.png';
-import password_icon from '../password.png';
-import user_icon from '../person.png';
+import email_icon from '../img/email.png';
+import password_icon from '../img/password.png';
+import user_icon from '../img/person.png';
 
 
 function LogRes(){

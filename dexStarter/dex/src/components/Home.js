@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import cover1 from '../cover-store-1.jpg';
-import carousel2img from '../carousel2img.jpg';
-import carousel3img from '../carousel3img.jpg';
-import home1 from '../home1.jpg';
-import home2 from '../home2.png';
+import cover1 from '../img/cover-store-1.jpg';
+import carousel2img from '../img/carousel2img.jpg';
+import carousel3img from '../img/carousel3img.jpg';
+import home1 from '../img/home1.jpg';
+import home2 from '../img/home2.png';
 import './styles/Carousel.css';
 
 function Home() {

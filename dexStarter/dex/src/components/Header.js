@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Logo from '../Logo.png';
+import Logo from '../img/Logo.png';
 import { Link, useLocation } from 'react-router-dom';
 
 function Header() {
@@ -61,11 +61,7 @@ function Header() {
       </div>
 
       <div className="rightH">
-        {isStorePage && (
-          <div className="search-bar">
-            <input type="text" id="search-bar-input" placeholder="Search..." />
-          </div>
-        )}
+        
         <Link to="/cart" className="link" onClick={hideDropdown}>
             <div className="headerItem">Cart </div>
           </Link>
