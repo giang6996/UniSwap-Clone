@@ -15,7 +15,7 @@ function ProductDetail() {
         const fetchProduct = async () => {
             try {
                 console.log('Fetching product with ID:', id); // Log the ID parameter
-                const response = await axios.get(`http://127.0.0.1:5000/api/products/${id}`);
+                const response = await axios.get(`http://localhost:3001/api/products/${id}`);
                 console.log('Response:', response.data); // Log the response data
                 setSelectedProduct(response.data);
             } catch (error) {
