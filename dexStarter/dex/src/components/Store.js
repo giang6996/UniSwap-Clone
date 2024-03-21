@@ -84,7 +84,7 @@ function Store() {
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [collectionFilterTerm, setCollectionFilterTerm] = useState('');
-  const [minPrice, setMinPrice] = useState(0); // Initial values 
+  const [minPrice, setMinPrice] = useState(0); // Initial values
   const [maxPrice, setMaxPrice] = useState('');
 
 
@@ -103,8 +103,8 @@ function Store() {
   }, []);
 
 
-  
-  
+
+
 
   return (
     <div className="container-fluid">
@@ -124,13 +124,13 @@ function Store() {
               <div className='py-4 px-2'>
                 <h5 className='text-dark text-start'>Search</h5>
                 <div class="input-group">
-                <input type="text" class="form-control rounded" placeholder="Search by title" value={searchTerm} onChange={(searchTerm) => setSearchTerm(event.target.value)} />
+                <input type="text" class="form-control rounded" placeholder="Search by title" value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)} />
                 </div>
               </div>
               <div className="py-4 px-2">
                 <h5 className='text-dark text-start'>Collection</h5>
                 <div class="input-group">
-                <input type="text" class="form-control rounded" placeholder="Search by author" value={collectionFilterTerm}  onChange={(collectionFilterTerm) => setCollectionFilterTerm(event.target.value)}/>
+                <input type="text" class="form-control rounded" placeholder="Search by author" value={collectionFilterTerm}  onChange={(event) => setCollectionFilterTerm(event.target.value)}/>
                 </div>
               </div>
               <div className="py-4 px-2">
