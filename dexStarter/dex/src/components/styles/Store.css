@@ -28,7 +28,7 @@
     overflow: hidden;
     padding: 5px 20px;
     opacity: 0.8;
-    
+
   }
 
   .products .card .title {
@@ -67,7 +67,7 @@
   .price, .desc {
     color: black;
   }
-  
+
   .products .card .title,
 .products .card .author,
 .products .card .price {
@@ -77,4 +77,3 @@
 .price-container p{
   color: black;
 }
-
