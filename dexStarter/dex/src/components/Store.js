@@ -84,25 +84,24 @@ function Store() {
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [collectionFilterTerm, setCollectionFilterTerm] = useState('');
-  const [minPrice, setMinPrice] = useState(0); // Initial values
+  const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState('');
 
 
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get('http://127.0.0.1:5000/api/products');
+      const response = await axios.get('http://localhost:3001/api/products');
       setProducts(response.data);
     } catch (error) {
       console.error('Error fetching products:', error);
     }
   };
 
+
   useEffect(() => {
     fetchProducts();
   }, []);
-
-
 
 
 
