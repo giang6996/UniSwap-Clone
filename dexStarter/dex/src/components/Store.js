@@ -7,7 +7,9 @@ import cover2 from '../img/cover-store-2.jpg';
 import cover3 from '../img/cover-store-3.jpg';
 import Carousel from 'react-bootstrap/Carousel';
 import './styles/Store.css';
-import "./styles/Carousel.css"
+import "./styles/Carousel.css";
+import { nftContract } from '../Contract';
+import { fetchNFTs } from '../NFTServices';
 
 
 function StoreCarousel() {
@@ -64,7 +66,7 @@ function ProductCard({ id, image_url, description, title, author, price }) {
           </div>
           <div className="title py-1">{title}</div>
         <div className="author py-1"><p>Made by <b>{author}</b></p></div>
-          <div className="price py-1">{`${price} ETH`}</div>
+          <div className="price py-1">{`${price} MYN`}</div>
         </div>
       </Link>
   );
@@ -89,21 +91,45 @@ function Store() {
 
 
 
-  const fetchProducts = async () => {
+  useEffect(() => {
+    const fetchData = async () => {
+        const fetchedNFTs = await fetchNFTs(); // Fetch data from backend API
+        const contractNFTs = await getContractNFTs(); // Fetch NFT data from contract (optional)
+        const combinedNFTs = fetchedNFTs.map(nftFromDb => {
+          const matchingContractNFT = contractNFTs.find(contractNFT => contractNFT.id === nftFromDb.id);
+          return {
+            ...nftFromDb, // Include data from database
+            ...matchingContractNFT, // Include data from contract (if any)
+          };
+        });
+      setProducts(combinedNFTs); // Update state with combined data
+    };
+    fetchData();
+  }, []); // Run useEffect only once on component mount
+
+  const getContractNFTs = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/api/products');
-      setProducts(response.data);
+      const contract = await nftContract();
+      const nftCount = await contract.balanceOf(contract.address); // Get total NFTs minted
+
+      // Loop through each NFT ID and fetch details using contract calls
+      const contractData = [];
+      for (let i = 0; i < nftCount.toNumber(); i++) {
+        const tokenId = i.toString();
+        const owner = await contract.tokenIdToOwner(tokenId);
+        // Fetch other details from contract as needed (e.g., price)
+        const contractNFTData = {
+          id: tokenId,
+          // Include other contract-specific data fetched here
+        };
+        contractData.push(contractNFTData);
+      }
+      return contractData;
     } catch (error) {
-      console.error('Error fetching products:', error);
+      console.error('Error fetching contract NFTs:', error);
+      return []; // Handle errors gracefully
     }
   };
-
-
-  useEffect(() => {
-    fetchProducts();
-  }, []);
-
-
 
   return (
     <div className="container-fluid">

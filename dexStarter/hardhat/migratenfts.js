@@ -9,7 +9,7 @@ const MYSQL_PASSWORD = "271104";
 const MYSQL_DATABASE = "s104212294_db";
 
 // Replace with your deployed contract address
-const CONTRACT_ADDRESS = "0x81B0962E68239DE8d4Bd6f99a7470E814282b68d";
+const CONTRACT_ADDRESS = "0x3a0A2bfB25052E0486d4f454B2411dBdCC285d83";
 
 async function migrateNFTs() {
     // Connect to MySQL database
@@ -24,23 +24,41 @@ async function migrateNFTs() {
     const [nfts] = await connection.execute("SELECT * FROM assets");
 
     // Get a signer from your private network (replace with your provider)
-    const provider = new ethers.providers.JsonRpcProvider("http://192.168.22.104:8545"); // Remember to replace
+    const provider = new ethers.providers.JsonRpcProvider("http://192.168.129.156:8545"); // Remember to replace
     const deployer = await provider.getSigner();
 
     // Connect the contract using the signer and ABI
     const contract = new ethers.Contract(CONTRACT_ADDRESS, NFT.abi, deployer);
 
     for (const nft of nfts) {
-        // Extract relevant data from the NFT object (replace with your schema)
+
         const tokenId = nft.id;
         const owner = nft.author;
         const title = nft.title;
+        const price = nft.price;
+        const availability = nft.availability;
+
+        const priceParts = price.split('.');
+        const integerPart = priceParts[0];
+        const decimalPart = priceParts[1].padEnd(2, '0'); // Ensure 2 decimal places (adjust if needed)
+
+        // Convert integer part to a BigNumber
+        const integerPartBN = ethers.BigNumber.from(integerPart);
+
+        // Convert decimal part to wei (assuming 2 decimal places)
+        const decimalPartWei = ethers.utils.parseUnits(decimalPart, 'gwei'); // Use 'gwei' for 9 decimal places
+
+        // Combine integer and decimal parts into total price in wei
+        const priceWei = integerPartBN.add(decimalPartWei);
 
         try {
             // Mint the NFT on the blockchain
             const tx = await contract.mintNFT({ gasLimit: 500000 }); // Adjust gas limit as needed
             await tx.wait();
             console.log(`NFT minted with ID: ${tokenId}, title: ${title} and owner: ${owner}`);
+            await contract.listNFTForSale(tokenId, priceWei, { gasLimit: 500000 }); // Adjust gas limit as needed
+            console.log(`Listed NFT ${tokenId} for sale at price: ${price}`);
+            console.log(`avability: ${availability}`)
         } catch (error) {
             console.error(`Error minting NFT ${tokenId}:`, error);
         }
