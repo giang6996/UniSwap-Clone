@@ -8,10 +8,10 @@ module.exports = {
   },
   networks: {
     mygeth: {
-      url: "http://192.168.22.104:8545",
+      url: "http://192.168.129.156:8545",
       chainId: 9999,
         accounts: [
-          "0x8636208ab670daddf9bc4f580e3f121d92a2ee158bc81c8942309b968042c79b",
+          "0x82a2c4c4eeb00f1f01c064b630cfd0d079b24051fcdceaf6d04b9bd3a7087cb3", //Default accounts to deploy contract
         ]
     }
   },

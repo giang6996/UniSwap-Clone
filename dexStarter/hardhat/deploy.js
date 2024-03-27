@@ -15,7 +15,7 @@ const NFT = require("../dex/src/artifacts/contracts/Nft.sol/Nft.json"); //compil
 const Token = require("../dex/src/artifacts/contracts/Token.sol/ComputerScienceToken.json"); //compiled file
 
 async function main() {
-  const provider = new ethers.providers.JsonRpcProvider("http://192.168.22.104:8545");
+  const provider = new ethers.providers.JsonRpcProvider("http://192.168.129.156:8545");
   const deployer = await provider.getSigner();
 
   console.log("Deploying contract with the account:", await deployer.getAddress());

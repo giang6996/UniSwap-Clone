@@ -10,7 +10,7 @@ contract ComputerScienceToken is ERC721, ERC721Enumerable, Ownable {
     uint256 private _nextTokenId;
 
     constructor(address initialOwner)
-        ERC721("ComputerScienceToken", "CST")
+        ERC721("ComputerScienceToken", "MYN")
         Ownable(initialOwner)
     {}
 

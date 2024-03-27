@@ -2,11 +2,11 @@ const { ethers } = require("ethers");
 const NFT = require("../dex/src/artifacts/contracts/Nft.sol/Nft.json"); //compiled file
 
 // Replace with your deployed contract address
-const CONTRACT_ADDRESS = "0x81B0962E68239DE8d4Bd6f99a7470E814282b68d";
+const CONTRACT_ADDRESS = "0x3a0A2bfB25052E0486d4f454B2411dBdCC285d83";
 
 async function checkNFT(tokenId) {
     // Get a provider for your private network
-    const provider = new ethers.providers.JsonRpcProvider("http://192.168.22.104:8545"); // Replace if needed
+    const provider = new ethers.providers.JsonRpcProvider("http://192.168.129.156:8545"); // Replace if needed
 
     // Create a contract instance using the ABI
     const contract = new ethers.Contract(CONTRACT_ADDRESS, NFT.abi, provider);
@@ -20,11 +20,13 @@ async function checkNFT(tokenId) {
             console.error(`NFT with ID ${tokenId} does not exist on the blockchain.`);
         } else {
             console.error("Error checking NFT ownership:", error);
+            throw error;
         }
     }
 }
 
+
 // Replace with the specific token ID you want to check
-const tokenIdToCheck = 5; // Adjust the ID
+const tokenIdToCheck = 1; // Adjust the ID
 
 checkNFT(tokenIdToCheck);
